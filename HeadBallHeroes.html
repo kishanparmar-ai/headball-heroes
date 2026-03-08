@@ -130,7 +130,7 @@ body::before { content:''; position:fixed; inset:-20px; background:url('backgrou
       <p class="mode-label">ONLINE MULTIPLAYER</p>
       <div class="lobby-row">
         <label class="lobby-label">Server URL</label>
-        <input id="serverUrlInput" class="lobby-input" type="text" placeholder="ws://localhost:3000" value="ws://localhost:3000">
+        <input id="serverUrlInput" class="lobby-input" type="text" placeholder="wss://headball-heroes.onrender.com" value="wss://headball-heroes.onrender.com">
       </div>
       <div class="lobby-divider"></div>
       <button type="button" class="lobby-action-btn" id="createRoomBtn">🏠 Create Room</button>
@@ -275,7 +275,7 @@ function setOnlineStatus(msg,isErr){
   el.textContent=msg; el.style.color=isErr?'#ff4444':'#ffe000';
 }
 function getServerUrl(){
-  return document.getElementById('serverUrlInput').value.trim()||'ws://localhost:3000';
+  return document.getElementById('serverUrlInput').value.trim()||'wss://headball-heroes.onrender.com';
 }
 function connectWS(){
   return new Promise((resolve,reject)=>{
